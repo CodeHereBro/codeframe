@@ -1,0 +1,273 @@
+<?php 
+
+include '../config/config.php';
+
+error_reporting(0); // For not showing any error
+
+if (isset($_POST['submit'])) { // Check press or not Post Comment Button
+	$name = $_POST['name']; // Get Name from form
+	$email = $_POST['email']; // Get Email from form
+	$comment = $_POST['comment']; // Get Comment from form
+
+	$sql = "INSERT INTO comments (name, email, comment)
+			VALUES ('$name', '$email', '$comment')";
+	$result = mysqli_query($conn, $sql);
+	if ($result) {
+		echo "<script>alert('Comment added successfully.')</script>";
+	} else {
+		echo "<script>alert('Comment does not add.')</script>";
+	}
+}
+
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-question.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha512-9BwLAVqqt6oFdXohPLuNHxhx36BVj5uGSGmizkmGkgl3uMSgNalKc/smum+GJU/TTP0jy0+ruwC3xNAk3F759A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../js/script.js"></script>
+    <title>Digit Removal Solution | CodeHub</title>
+</head>
+
+<body>
+    <section class="navbar background">
+        <nav>
+            <button class="toggleBtn" onclick="menutoggle()"><img src="../img/menu.png" class="menu-icon"
+                    style="width: 30px; position: absolute; left: 0; top: 20px; margin-left: 20px;"></button>
+            <ul class="nav-list" id="MenuItems">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Blog">Blog</a></li>
+            </ul>
+        </nav>
+        <div class="rightnav">
+            <input type="text" name="search" id='search' placeholder="Search" onkeyup="search_filter()">
+            <button class="btn btn-sm" onclick="search_filter()">Search</button>
+        </div>
+        <!-- <button onclick="myFunction()">Toggle dark mode</button> -->
+        </nav>
+    </section>
+
+    <div class="content" id="down">
+        <span style="content: \2600; font-size: 40px;">&#9728;</span>
+        &nbsp;
+        <input type="checkbox" id="tooglenight" class="cbx hidden" />
+        <label for="tooglenight" class="switch" onclick="myFunction()"></label>
+        &nbsp;&nbsp;&nbsp;
+        <span style="content: \1F319; font-size: 35px;">&#9790;</span>
+    </div>
+    <section class="box">
+        <img src="../img/leetcodeLogo.png" alt="" class="main-logo">
+        <hr>
+        <!-- Heading -->
+        <h1 style="font-family: Catamaran, sans-serif;">3. Longest Substring Without Repeating Characters</h1>
+        <p>Level - Medium</p>
+        <hr>
+        <br>
+        <!-- subHeading -->
+        <h2>question</h2>
+        <p>Given a string s, find the length of the <strong>longest substring</strong> without repeating characters.</p>
+
+        <hr>
+        <br>
+
+        <h2>Example 1:</h2>
+        <p>
+            <strong>Input:</strong>  s = "abcabcbb" <br>
+            <strong>Output:</strong> 3 <br>
+            <strong>Explanation:</strong> The answer is "abc", <br> &nbsp;with the length of 3.
+        </p>
+
+        <h2>Example 2:</h2>
+        <p>
+            <strong>Input:</strong>  s = "bbbbb" <br>
+            <strong>Output:</strong> 1 <br>
+            <strong>Explanation:</strong> The answer is "b", <br> &nbsp;with the length of 1.
+        </p>
+
+
+        <h2>Example 3:</h2>
+        <p>
+            <strong>Input:</strong>  s = "pwwkew" <br>
+            <strong>Output:</strong> 3 <br>
+            <strong>Explanation:</strong> The answer is "wke", <br> &nbsp;with the length of 3.
+            <br>Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+        </p>
+        <hr>
+        <br>
+        <h2>
+          Answer  
+        </h2>
+        <p>
+            class Solution {<br>
+                &emsp; public: <br>
+                &emsp;int lengthOfLongestSubstring(string s) {<br>
+                    &emsp;&emsp;vector<int> dict(256, -1);<br>
+                    &emsp;&emsp;int maxLen = 0, start = -1; <br>
+                    &emsp;&emsp;for (int i = 0; i < s.size(); i++) { <br>
+                        &emsp;&emsp;&emsp;if (dict[s[i]] > start) <br>
+                        &emsp;&emsp;&emsp;{ <br>
+                            &emsp;&emsp;&emsp;&emsp;start = dict[s[i]]; <br>
+                        &emsp;&emsp;&emsp;} <br>
+                        &emsp;&emsp;&emsp;dict[s[i]] = i; <br>
+                        &emsp;&emsp;&emsp;maxLen = max(maxLen, i-start); <br>
+                        &emsp;&emsp;} <br>
+                        &emsp;&emsp;return maxLen;  <br>
+                    &emsp;} <br>
+                };
+        </p>
+
+    </section>
+
+    <!-- share -->
+    
+    <div class="share-btn-container">
+    <h1 style="font-size: 15px; font-family: 'Poppins', sans-serif;">Share it on &nbsp; &#8594;</h1>
+        <a href="#" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="facebook-btn">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#" class="twitter-btn">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+
+    <!-- Comments -->
+    <div class="comments">
+        <div class="wrapper">
+            <form action="" method="POST" class="form">
+                <div class="row">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your Name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+                    </div>
+                </div>
+                <div class="input-group textarea">
+                    <label for="comment">Comment</label>
+                    <textarea id="comment" name="comment" placeholder="Enter your Comment" required></textarea>
+                </div>
+                <div class="input-group">
+                    <button name="submit" class="btn">Post Comment</button>
+                </div>
+            </form>
+            <div class="prev-comments">
+                <?php 
+                
+                $sql = "SELECT * FROM comments";
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+    
+                ?>
+                <div class="single-item">
+                    <h4>
+                        <?php echo $row['name']; ?>
+                    </h4>
+                    <a href="mailto:<?php echo $row['email']; ?>">
+                        <?php echo $row['email']; ?>
+                    </a>
+                    <p>
+                        <?php echo $row['comment']; ?>
+                    </p>
+                </div>
+                <?php
+    
+                    }
+                }
+                
+                ?>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- -----------------Footer--------------- -->
+
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-2">
+                    <img src="../img/profile.jpg" alt="logo">
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <hr>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=p6GI-co45IY&list=PL_rmipHSvQlyx2DCSOh6Yfh1WA8b22abM"
+                                target="_blank">Python Video Tutorial</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=9qqQjuspmPI&list=PL_rmipHSvQlyRn_lxIQRyYOWnHj4aY8rY"
+                                target="_blank">DSA Video Tutorial</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=EOpvZlGCmz0&list=PL_rmipHSvQlyg54Jhr-MjXWlHgNKgS51e"
+                                target="_blank">DSA Problem Sheet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <hr>
+                    <ul>
+                        <li><a href="https://www.facebook.com/krishnendu.roy.501598/" target="_blank">Facebook</a></li>
+                        <li><a href="https://github.com/CodeHereBro" target="_blank">github</a></li>
+                        <li><a href="https://www.instagram.com/krishnendu_roy52/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCyJXQWe8mwX6EdKwIyHecAA"
+                                target="_blank">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright &copy; By krishnendu Roy</p>
+        </div>
+
+    <!-- JScript -->
+    <script>
+        const facebookBtn = document.querySelector(".facebook-btn");
+        const twitterBtn = document.querySelector(".twitter-btn");
+        const pinterestBtn = document.querySelector(".pinterest-btn");
+        const whatsappBtn = document.querySelector(".whatsapp-btn");
+
+        function init() {
+            let postUrl = encodeURI(document.location.href);
+            let postTitle = encodeURI("Hi everyone, please check this out: ");
+            whatsappBtn.setAttribute(
+                "href",
+                `https://wa.me/?text=${postTitle} ${postUrl}`
+            );
+
+            facebookBtn.setAttribute(
+                "href", 
+                `https://www.facebook.com/sharer.php?u=${postUrl}`
+            );
+
+            twitterBtn.setAttribute(
+                "href",
+                `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
+            );
+        }
+
+        init();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../js/question.js"></script>
+</body>
+
+</html>
