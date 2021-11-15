@@ -26,6 +26,10 @@ nav{
   text-align: right;
 }
 
+a{
+  text-decoration: none;
+}
+
 .rightnav{
   margin-right: 10px;
 }
@@ -56,7 +60,7 @@ nav{
 
 .nav-list li a{
     font-size: 40px;
-    font-family: 'Road Rage', cursive;
+    /* font-family: 'Road Rage', cursive; */
 }
 
 .nav-list li a:hover{
@@ -563,7 +567,7 @@ body {
 }
 .copyright{
   text-align: center;
-  font-family: cursive;
+  /* font-family: cursive; */
   font-size: 19.2;
 }
 
