@@ -59,7 +59,7 @@ a{
 }
 
 .nav-list li a{
-    font-size: 40px;
+    font-size: 28px;
     /* font-family: 'Road Rage', cursive; */
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -614,7 +614,7 @@ body {
   
   
   .nav-list li a {
-    font-size: 50px;
+    font-size: 28px;
     color: white;
   }
 

@@ -11,8 +11,8 @@ const flag = false;
 MenuItems.style.maxHeight = "0px";
 function menutoggle() {
     if (MenuItems.style.maxHeight == "0px") {
-        MenuItems.style.maxHeight = "200px"        
-        box.style.marginTop = "15rem";
+        MenuItems.style.maxHeight = "300px"        
+        box.style.marginTop = "12rem";
         flag = true;
     }
     else {
