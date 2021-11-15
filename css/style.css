@@ -61,6 +61,7 @@ a{
 .nav-list li a{
     font-size: 40px;
     /* font-family: 'Road Rage', cursive; */
+    font-family: 'Poppins', sans-serif;
 }
 
 .nav-list li a:hover{
@@ -568,6 +569,7 @@ body {
 .copyright{
   text-align: center;
   /* font-family: cursive; */
+  font-family: 'Poppins', sans-serif;
   font-size: 19.2;
 }
 
