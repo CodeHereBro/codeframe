@@ -30,9 +30,9 @@ a{
   text-decoration: none;
 }
 
-.rightnav{
+/* .rightnav{
   margin-right: 10px;
-}
+} */
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -645,8 +645,9 @@ body {
   }
 
   #search{
-    padding: 1px;
-    width: 50%;
+    padding: 5px 1px;
+    font-size: 8px;
+    /* width: 50%; */
   }
   .btn-sm{
     font-size: 10px;
