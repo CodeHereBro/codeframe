@@ -24,7 +24,8 @@ hr{
 }
 
 .box p{
-    font-family: cursive;
+    /* font-family: cursive; */
+    font-family: 'poppins', sans-serif;
     font-size: 19.2;
 }
 
