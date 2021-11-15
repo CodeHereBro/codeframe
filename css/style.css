@@ -603,6 +603,7 @@ body {
     justify-content: center;
     overflow: hidden;
     margin-bottom: 100px;
+    transition: 0.2s ease;
   }
   
   
