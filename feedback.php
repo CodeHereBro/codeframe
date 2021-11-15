@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
         integrity="sha512-9BwLAVqqt6oFdXohPLuNHxhx36BVj5uGSGmizkmGkgl3uMSgNalKc/smum+GJU/TTP0jy0+ruwC3xNAk3F759A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="js/script.js"></script>
-    <title>Document</title>
+    <title>Feedback | CodeFrame</title>
 </head>
 
 <body>
@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
     <!-- header -->
     <section class="box" id="down">
         <div class="box-main">
-            <h1 class="center-big-text">CodeHub</h1>
+            <h1 class="center-big-text">CodeFrame</h1>
             <div class="content">
                 <span style="content: \2600; font-size: 40px;">&#9728;</span>
                 &nbsp;
@@ -98,7 +98,7 @@ if (isset($_POST['submit'])) {
                 </h2>
             </div>
             </h2>
-            <p class="w3-cursive">Welcome to <strong>CodeHub</strong> <strong>Feedback form</strong>,
+            <p class="w3-cursive">Welcome to <strong>CodeFrame</strong> <strong>Feedback form</strong>,
                 Please Share your feedback Here. <br> For Video help you can
                 folow my YouTube
                 Channel <b><a href="https://www.youtube.com/channel/UCyJXQWe8mwX6EdKwIyHecAA">'Krishnendu Roy'</a></b>
