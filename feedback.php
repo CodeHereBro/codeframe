@@ -2,12 +2,12 @@
 
 include 'config/config.php';
 
-error_reporting(0); // For not showing any error
+error_reporting(0); 
 
-if (isset($_POST['submit'])) { // Check press or not Post Comment Button
-	$name = $_POST['name']; // Get Name from form
-	$email = $_POST['email']; // Get Email from form
-	$comment = $_POST['comment']; // Get Comment from form
+if (isset($_POST['submit'])) { 
+	$name = $_POST['name'];
+	$email = $_POST['email']; 
+	$comment = $_POST['comment'];
 
 	$sql = "INSERT INTO comments (name, email, comment)
 			VALUES ('$name', '$email', '$comment')";
