@@ -1,29 +1,3 @@
-<?php 
-
-include '../config/config.php';
-
-error_reporting(0); // For not showing any error
-
-if (isset($_POST['submit'])) { // Check press or not Post Comment Button
-	$name = $_POST['name']; // Get Name from form
-	$email = $_POST['email']; // Get Email from form
-	$comment = $_POST['comment']; // Get Comment from form
-
-	$sql = "INSERT INTO comments (name, email, comment)
-			VALUES ('$name', '$email', '$comment')";
-	$result = mysqli_query($conn, $sql);
-	if ($result) {
-		echo "<script>alert('Comment added successfully.')</script>";
-	} else {
-		echo "<script>alert('Comment does not add.')</script>";
-	}
-}
-
-?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,20 +11,23 @@ if (isset($_POST['submit'])) { // Check press or not Post Comment Button
         integrity="sha512-9BwLAVqqt6oFdXohPLuNHxhx36BVj5uGSGmizkmGkgl3uMSgNalKc/smum+GJU/TTP0jy0+ruwC3xNAk3F759A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="../js/script.js"></script>
-    <title>Digit Removal Solution | CodeHub</title>
+    <title>Digit Removal Solution | Think-Code</title>
 </head>
 
 <body>
     <section class="navbar background">
         <nav>
-            <button class="toggleBtn" onclick="menutoggle()"><img src="../img/menu.png" class="menu-icon"
-                    style="width: 30px; position: absolute; left: 0; top: 20px; margin-left: 20px;"></button>
+            <!-- <button class="toggleBtn" onclick="menutoggle()"><img src="img/menu.png" class="menu-icon"
+                    style="width: 30px; position: absolute; left: 0; top: 20px; margin-left: 20px;"></button> -->
             <ul class="nav-list" id="MenuItems">
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Blog">Blog</a></li>
+                <li><a href="../index">Home</a></li>
+                <li><a href="../about">About</a></li>
+                <li><a href="../feedback">Feedback</a></li>
             </ul>
         </nav>
+        <div class="menu-btn" onclick="menutoggle()">
+            <div class="menu-burger"></div>
+        </div>
         <div class="rightnav">
             <input type="text" name="search" id='search' placeholder="Search" onkeyup="search_filter()">
             <button class="btn btn-sm" onclick="search_filter()">Search</button>
@@ -162,76 +139,34 @@ if (isset($_POST['submit'])) { // Check press or not Post Comment Button
             &emsp;return 0;<br>
             }
         </p>
+
+        <!-- share -->
+
+        <div class="share-btn-container">
+            <h1 style="font-size: 15px; font-family: 'Poppins', sans-serif;">Share it&nbsp; &#8594;</h1>
+            <a href="#" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="facebook-btn">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="twitter-btn">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    
+        <!-- Next - Previous -->
+        <div class="next-pre">
+            <a href="#" class="previous">&laquo; Previous</a>
+            <a href="#" class="next">Next &raquo;</a>
+        </div>
+        
     </section>
 
-    <!-- share -->
     
-    <div class="share-btn-container">
-    <h1 style="font-size: 15px; font-family: 'Poppins', sans-serif;">Share it on &nbsp; &#8594;</h1>
-        <a href="#" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="#" class="facebook-btn">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="#" class="twitter-btn">
-            <i class="fab fa-twitter"></i>
-        </a>
-    </div>
-
-    <!-- Comments -->
-    <div class="comments">
-        <div class="wrapper">
-            <form action="" method="POST" class="form">
-                <div class="row">
-                    <div class="input-group">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Enter your Name" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="Enter your Email" required>
-                    </div>
-                </div>
-                <div class="input-group textarea">
-                    <label for="comment">Comment</label>
-                    <textarea id="comment" name="comment" placeholder="Enter your Comment" required></textarea>
-                </div>
-                <div class="input-group">
-                    <button name="submit" class="btn">Post Comment</button>
-                </div>
-            </form>
-            <div class="prev-comments">
-                <?php 
-                
-                $sql = "SELECT * FROM comments";
-                $result = mysqli_query($conn, $sql);
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
     
-                ?>
-                <div class="single-item">
-                    <h4>
-                        <?php echo $row['name']; ?>
-                    </h4>
-                    <a href="mailto:<?php echo $row['email']; ?>">
-                        <?php echo $row['email']; ?>
-                    </a>
-                    <p>
-                        <?php echo $row['comment']; ?>
-                    </p>
-                </div>
-                <?php
     
-                    }
-                }
-                
-                ?>
-            </div>
-
-        </div>
-
-    </div>
+    
     <!-- -----------------Footer--------------- -->
 
 
@@ -294,11 +229,6 @@ if (isset($_POST['submit'])) { // Check press or not Post Comment Button
                 "href",
                 `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
             );
-
-            // pinterestBtn.setAttribute(
-            //     "href",
-            //     `https://pinterest.com/pin/create/bookmarklet/?media=${postImg}&url=${postUrl}&description=${postTitle}`
-            // );
         }
 
         init();

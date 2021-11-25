@@ -3,7 +3,9 @@
 hr{
     margin: 20px 0;
 }
-
+.navbar{
+    z-index: 10;
+}
 .main-logo{
     display: block;
     margin-left: auto;
@@ -11,11 +13,40 @@ hr{
     width: 30%;
 }
 
-.box h2{
-    /* font-family: 'Nunito', sans-serif; */
-    font-weight: 800;
-    font-size: 2rem;
-    font-family: 'Catamaran', sans-serif;
+.iframe-container{
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    padding-top: 45%;
+    box-shadow: 0 0 20px 4px rgb(63 47 47 / 65%);
+}
+
+.main-iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img-mid{
+    text-align: center;
+    margin: 30px 0; 
+}
+
+.img-mid img{
+    width: 50%;
+}
+.prettyprint{
+    box-shadow: 0 0 4px 1px rgb(63 47 47 / 65%); 
+    padding: 10px; 
+    margin: 10px 0;
 }
 
 .box h3{
@@ -24,7 +55,7 @@ hr{
 }
 
 .box p{
-    font-family: cursive;
+    font-family: "poppins" sans-serif;
     font-size: 19.2;
 }
 
@@ -177,15 +208,47 @@ label{
     color: #111;
 }
 
-/* footer */
+/* Next and previous */
+.next-pre a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+  
+.next-pre a:hover {
+    background-color: #ddd;
+    color: black;
+}
+  
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+  
+.next {
+    float: right;
+    background-color: #04AA6D;
+    color: white;
+}
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Segoe UI",Arial,sans-serif;
+/* footer */
+h1{
+    font-family: "Poppins";
     font-weight: 800;
+    margin: 10px 0;
+}
+h2, h3, h4, h5, h6 {
+    font-family: "Poppins";
+    font-weight: 700;
     margin: 10px 0;
 }
 a {
     color: inherit;
+}
+@media only screen and (max-width: 660px) {
+    .img-mid img{
+        width: 90%;
+    }
 }
 @media only screen and (max-width: 550px){
     .code{

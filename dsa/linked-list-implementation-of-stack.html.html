@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
         integrity="sha512-9BwLAVqqt6oFdXohPLuNHxhx36BVj5uGSGmizkmGkgl3uMSgNalKc/smum+GJU/TTP0jy0+ruwC3xNAk3F759A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="../js/script.js"></script>
-    <title>3. Longest Substring Without Repeating Characters | Think-Code</title>
+    <title>Stack DSA | Think-Code</title>
 </head>
 
 <body>
@@ -20,9 +20,9 @@
             <!-- <button class="toggleBtn" onclick="menutoggle()"><img src="img/menu.png" class="menu-icon"
                     style="width: 30px; position: absolute; left: 0; top: 20px; margin-left: 20px;"></button> -->
             <ul class="nav-list" id="MenuItems">
-                <li><a href="index">Home</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="feedback">Feedback</a></li>
+                <li><a href="../index">Home</a></li>
+                <li><a href="../about">About</a></li>
+                <li><a href="../feedback">Feedback</a></li>
             </ul>
         </nav>
         <div class="menu-btn" onclick="menutoggle()">
@@ -45,69 +45,14 @@
         <span style="content: \1F319; font-size: 35px;">&#9790;</span>
     </div>
     <section class="box">
-        <img src="../img/leetcodeLogo.png" alt="" class="main-logo">
         <hr>
-        <!-- Heading -->
-        <h1 style="font-family: Catamaran, sans-serif;">3. Longest Substring Without Repeating Characters</h1>
-        <p>Level - Medium</p>
-        <hr>
-        <br>
-        <!-- subHeading -->
-        <h2>question</h2>
-        <p>Given a string s, find the length of the <strong>longest substring</strong> without repeating characters.</p>
-
-        <hr>
-        <br>
-
-        <h2>Example 1:</h2>
-        <p>
-            <strong>Input:</strong>  s = "abcabcbb" <br>
-            <strong>Output:</strong> 3 <br>
-            <strong>Explanation:</strong> The answer is "abc", <br> &nbsp;with the length of 3.
-        </p>
-
-        <h2>Example 2:</h2>
-        <p>
-            <strong>Input:</strong>  s = "bbbbb" <br>
-            <strong>Output:</strong> 1 <br>
-            <strong>Explanation:</strong> The answer is "b", <br> &nbsp;with the length of 1.
-        </p>
-
-
-        <h2>Example 3:</h2>
-        <p>
-            <strong>Input:</strong>  s = "pwwkew" <br>
-            <strong>Output:</strong> 3 <br>
-            <strong>Explanation:</strong> The answer is "wke", <br> &nbsp;with the length of 3.
-            <br>Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
-        </p>
-        <hr>
-        <br>
-        <h2>
-          Answer  
-        </h2>
-        <p>
-            class Solution {<br>
-                &emsp; public: <br>
-                &emsp;int lengthOfLongestSubstring(string s) {<br>
-                    &emsp;&emsp;vector<int> dict(256, -1);<br>
-                    &emsp;&emsp;int maxLen = 0, start = -1; <br>
-                    &emsp;&emsp;for (int i = 0; i < s.size(); i++) { <br>
-                        &emsp;&emsp;&emsp;if (dict[s[i]] > start) <br>
-                        &emsp;&emsp;&emsp;{ <br>
-                            &emsp;&emsp;&emsp;&emsp;start = dict[s[i]]; <br>
-                        &emsp;&emsp;&emsp;} <br>
-                        &emsp;&emsp;&emsp;dict[s[i]] = i; <br>
-                        &emsp;&emsp;&emsp;maxLen = max(maxLen, i-start); <br>
-                        &emsp;&emsp;} <br>
-                        &emsp;&emsp;return maxLen;  <br>
-                    &emsp;} <br>
-                };
-        </p>
+        <h1>Linked-list Implementaion of Stack :</h1>
+        
         
         <!-- share -->
+
         <div class="share-btn-container">
-            <h1 style="font-size: 15px; font-family: 'Poppins', sans-serif;">Share it&nbsp; &#8594;</h1>
+            <h1 class="full-text" style="font-size: 15px; font-family: 'Poppins', sans-serif;">Share it&nbsp; &#8594;</h1>
             <a href="#" class="whatsapp-btn">
                 <i class="fab fa-whatsapp"></i>
             </a>
@@ -118,13 +63,18 @@
                 <i class="fab fa-twitter"></i>
             </a>
         </div>
-    
+
         <!-- Next - Previous -->
         <div class="next-pre">
             <a href="#" class="previous">&laquo; Previous</a>
             <a href="#" class="next">Next &raquo;</a>
         </div>
+
     </section>
+
+
+
+
 
     <!-- -----------------Footer--------------- -->
 
@@ -164,38 +114,38 @@
             <p class="copyright">Copyright &copy; By krishnendu Roy</p>
         </div>
 
-    <!-- JScript -->
-    <script>
-        const facebookBtn = document.querySelector(".facebook-btn");
-        const twitterBtn = document.querySelector(".twitter-btn");
-        const pinterestBtn = document.querySelector(".pinterest-btn");
-        const whatsappBtn = document.querySelector(".whatsapp-btn");
+        <!-- JScript -->
+        <script>
+            const facebookBtn = document.querySelector(".facebook-btn");
+            const twitterBtn = document.querySelector(".twitter-btn");
+            const pinterestBtn = document.querySelector(".pinterest-btn");
+            const whatsappBtn = document.querySelector(".whatsapp-btn");
 
-        function init() {
-            let postUrl = encodeURI(document.location.href);
-            let postTitle = encodeURI("Hi everyone, please check this out: ");
-            whatsappBtn.setAttribute(
-                "href",
-                `https://wa.me/?text=${postTitle} ${postUrl}`
-            );
+            function init() {
+                let postUrl = encodeURI(document.location.href);
+                let postTitle = encodeURI("Hi everyone, please check this out: ");
+                whatsappBtn.setAttribute(
+                    "href",
+                    `https://wa.me/?text=${postTitle} ${postUrl}`
+                );
 
-            facebookBtn.setAttribute(
-                "href", 
-                `https://www.facebook.com/sharer.php?u=${postUrl}`
-            );
+                facebookBtn.setAttribute(
+                    "href",
+                    `https://www.facebook.com/sharer.php?u=${postUrl}`
+                );
 
-            twitterBtn.setAttribute(
-                "href",
-                `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
-            );
-        }
+                twitterBtn.setAttribute(
+                    "href",
+                    `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
+                );
+            }
 
-        init();
-    </script>
+            init();
+        </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="../js/question.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="../js/question.js"></script>
 </body>
 
 </html>

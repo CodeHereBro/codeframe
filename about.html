@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+        integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Think-Code</title>
+</head>
+
+<body>
+    <section class="navbar background" style="z-index: 10;">
+        <nav>
+            <!-- <button class="toggleBtn" onclick="menutoggle()"><img src="img/menu.png" class="menu-icon"
+                    style="width: 30px; position: absolute; left: 0; top: 20px; margin-left: 20px;"></button> -->
+            <ul class="nav-list" id="MenuItems">
+                <li><a href="index">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="feedback">Feedback</a></li>
+            </ul>
+        </nav>
+        <div class="menu-btn" onclick="menutoggle()">
+            <div class="menu-burger"></div>
+        </div>
+        <div class="rightnav">
+            <input type="text" name="search" id='search' placeholder="Search" onkeyup="search_filter()">
+            <button class="btn btn-sm" onclick="search_filter()">Search</button>
+        </div>
+        <!-- <button onclick="myFunction()">Toggle dark mode</button> -->
+        </nav>
+    </section>
+    <section class="box" id="down">
+        <div class="box-main">
+            <h1 class="center-big-text">Think-Code</h1>
+            <div class="content">
+                <span style="content: \2600; font-size: 40px;">&#9728;</span>
+                &nbsp;
+                <input type="checkbox" id="tooglenight" class="cbx hidden" />
+                <label for="tooglenight" class="switch" onclick="myFunction()"></label>
+                &nbsp;&nbsp;&nbsp;
+                <span style="content: \1F319; font-size: 35px;">&#9790;</span>
+            </div>
+        </div>
+        <div class="about-short">
+            <div class="short-container">
+                <div class="logo">
+                    <img src="img/profile.jpg" alt="Krishnendu roy">
+
+                </div>
+                <div class="word-span" style="position:relative;">
+                    <h2>Hi! I'm
+                        <div class="word">
+                            <span>K</span>
+                            <span>R</span>
+                            <span>I</span>
+                            <span>S</span>
+                            <span>H</span>
+                            <span>N</span>
+                            <span>E</span>
+                            <span>N</span>
+                            <span>D</span>
+                            <span>U</span>
+                            <span>&nbsp;</span>
+                            <span>R</span>
+                            <span>O</span>
+                            <span>Y</span>
+                        </div>
+                    </h2>
+                </div>
+            </div>
+            <p>print("Hello, Friends!") <br>
+                I am Krishnendu Roy from India. I am a 2nd year computer science and Technology engineering student with
+                a passion for learning technologies and new programming laguage, and I love to play football, and love
+                to watch Stand-Up Comedy.
+                . Also i love to teach others that's why i have build this website, also i have a youtube channel where
+                i regularly upload coding, programming related video. <br><br>Thanks for visiting this website</p>
+
+            <div class="all-img">
+                <a href="https://www.facebook.com/krishnendu.roy.501598/" target="_blank"><img src="img/facebook.png"
+                        alt="facebook link"></a>
+                <a href="https://www.instagram.com/krishnendu_roy52/" target="_blank"><img src="img/instagram.png"
+                        alt="instagram Link"></a>
+                <a href="https://www.youtube.com/channel/UCyJXQWe8mwX6EdKwIyHecAA" target="_blank"><img
+                        src="img/youtube.png" alt="Youtube Link"></a>
+                <a href="https://github.com/CodeHereBro" target="_blank"><img src="img/github.png"
+                        alt="github Link"></a>
+            </div>
+
+            <div>
+
+                <h1 style=" font-weight: 800;">Skills</h1>
+                <hr style="color: black;">
+                <h4 style="font-weight: 700;">
+                    Languages
+                </h4>
+                <div
+                    style="padding-left: 45px; font: 100%/1.625 -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'; font-size: 1.2rem;">
+                    <ul class="a">
+                        <li>C</li>
+                        <li>C++</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <hr style="color: black;">
+                <h4 style="font-weight: 700;">
+                    Others
+                </h4>
+                <div
+                    style="padding-left: 45px; font: 100%/1.625 -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'; font-size: 1.2rem;">
+                    <ul class="a">
+                        <li>Data structure and Algorithm</li>
+                    </ul>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- -----------------Footer--------------- -->
+
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-2">
+                    <img src="img/profile.jpg" alt="logo">
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <hr>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=p6GI-co45IY&list=PL_rmipHSvQlyx2DCSOh6Yfh1WA8b22abM"
+                                target="_blank">Python Video Tutorial</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=9qqQjuspmPI&list=PL_rmipHSvQlyRn_lxIQRyYOWnHj4aY8rY"
+                                target="_blank">DSA Video Tutorial</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=EOpvZlGCmz0&list=PL_rmipHSvQlyg54Jhr-MjXWlHgNKgS51e"
+                                target="_blank">DSA Problem Sheet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <hr>
+                    <ul>
+                        <li><a href="https://www.facebook.com/krishnendu.roy.501598/" target="_blank">Facebook</a></li>
+                        <li><a href="https://github.com/CodeHereBro" target="_blank">github</a></li>
+                        <li><a href="https://www.instagram.com/krishnendu_roy52/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCyJXQWe8mwX6EdKwIyHecAA"
+                                target="_blank">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright &copy; By krishnendu Roy</p>
+        </div>
+    </div>
+
+    <script>
+        const spans = document.querySelectorAll('.word span');
+
+        spans.forEach((span, idx) => {
+            span.addEventListener('click', (e) => {
+                e.target.classList.add('active');
+            });
+            span.addEventListener('animationend', (e) => {
+                e.target.classList.remove('active');
+            });
+
+            setTimeout(() => {
+                span.classList.add('active');
+            }, 750 * (idx + 1))
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.list').click(function () {
+                const value = $(this).attr('data-filter');
+                if (value == 'all') {
+                    $('.itembox').show('1000');
+                }
+                else {
+                    $('.itembox').not('.' + value).hide('1000');
+                    $('.itembox').filter('.' + value).show('1000');
+                }
+            })
+        })
+
+        $('.list').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    </script>
+
+    <script>
+        function search_filter() {
+            let input = document.getElementById('search').value
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('all-q');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                }
+                else {
+                    x[i].style.display = "list-item";
+                }
+            }
+        }
+    </script>
+    <script src="js/script.js?v=<?php echo time(); ?>"></script>
+</body>
+
+</html>
